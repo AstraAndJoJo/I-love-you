@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="600" viewBox="0 0 800 600">
+  <defs>
+    <linearGradient id="p1" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#fff6f9"/>
+      <stop offset="1" stop-color="#e7d1ff"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="600" fill="url(#p1)"/>
+  <text x="50%" y="50%" text-anchor="middle" font-family="Great Vibes" font-size="56" fill="#ff6fa5">Aarif ♥ Ananya</text>
+  <circle cx="120" cy="120" r="24" fill="#ffb3d9"/>
+  <circle cx="700" cy="480" r="18" fill="#ff8fc4"/>
+</svg>

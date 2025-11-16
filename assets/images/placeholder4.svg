@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="600" viewBox="0 0 800 600">
+  <defs>
+    <linearGradient id="p4" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#e7d1ff"/>
+      <stop offset="1" stop-color="#fff6f9"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="600" fill="url(#p4)"/>
+  <text x="50%" y="50%" text-anchor="middle" font-family="Dancing Script" font-size="46" fill="#59324e">Cafe Dates</text>
+  <rect x="360" y="330" width="80" height="50" rx="10" fill="#ffb3d9"/>
+</svg>
