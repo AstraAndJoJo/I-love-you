@@ -28,6 +28,15 @@
 
     <main class="section letters-hero">
       <h1>Letters to Ananya</h1>
+
+      <!-- Centered Music Button -->
+      <div class="music-button-container">
+        <button id="music-player-btn" class="music-player-btn music-letters" aria-pressed="false">
+          <span class="music-icon">✉️</span>
+          <span class="music-label">Letter Lullaby</span>
+        </button>
+      </div>
+
       <div class="letter-section">
         <h2>My First Letter to You</h2>
         <p class="letter">Ananya, the day I met you, the world shifted into soft focus. Every moment since has carried the warmth of your smile and the calm of your voice. I promise to cherish the laughter, the quiet, and the unseen tender pauses that make us "us."</p>
@@ -46,7 +55,11 @@
       <div class="footer-line">Made with ♥ by Aarif for Ananya</div>
       <div class="footer-hearts"></div>
     </footer>
+    
+    <!-- background audio -->
+    <audio id="background-music" src="assets/music/Mayabini.mp3" preload="auto" loop></audio>
 
     <script src="js/script.js"></script>
+  
   </body>
 </html>
