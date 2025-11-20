@@ -28,6 +28,15 @@
 
     <main class="section">
       <h1 class="title">Our Moments</h1>
+
+      <!-- Centered Music Button -->
+      <div class="music-button-container">
+        <button id="music-player-btn" class="music-player-btn music-videos" aria-pressed="false">
+          <span class="music-icon">🎬</span>
+          <span class="music-label">Play Moments</span>
+        </button>
+      </div>
+
       <div class="video-grid">
         <div class="video-card">
           <img class="video-thumb" src="assets/images/placeholder3.svg" alt="Moment 1" />
@@ -53,8 +62,12 @@
     <footer>
       <div class="footer-line">Made with ♥ by Aarif for Ananya</div>
       <div class="footer-hearts"></div>
-    </footer>
+    </footer>\
+
+    <!-- background audio -->
+    <audio id="background-music" src="assets/music/Maula_Mere_Maula.mp3" preload="auto" loop></audio>
 
     <script src="js/script.js"></script>
-  </body>
+
+   </body>
 </html>
