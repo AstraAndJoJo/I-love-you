@@ -28,6 +28,15 @@
 
     <main class="section surprise-hero">
       <h1 class="title">A Lovely Surprise</h1>
+
+      <!-- Centered Music Button -->
+      <div class="music-button-container">
+        <button id="music-player-btn" class="music-player-btn music-surprise" aria-pressed="false">
+          <span class="music-icon">✨</span>
+          <span class="music-label">Surprise Tune</span>
+        </button>
+      </div>
+
       <div class="typewriter"></div>
       <div class="big-heart"></div>
       <div class="hidden-message">Forever yours, today and every day. — Aarif</div>
@@ -38,6 +47,9 @@
       <div class="footer-line">Made with ♥ by Aarif for Ananya</div>
       <div class="footer-hearts"></div>
     </footer>
+
+    <!-- background audio -->
+    <audio id="background-music" src="assets/music/Tera_Chehra.mp3" preload="auto" loop></audio>
 
     <script src="js/script.js"></script>
   </body>
