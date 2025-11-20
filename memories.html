@@ -28,6 +28,15 @@
 
     <main class="section">
       <h1 class="title">Our Timeline of Memories</h1>
+
+      <!-- Centered Music Button -->
+      <div class="music-button-container">
+        <button id="music-player-btn" class="music-player-btn music-memories" aria-pressed="false">
+          <span class="music-icon">💌</span>
+          <span class="music-label">Play Memories</span>
+        </button>
+      </div>
+
       <div class="timeline">
         <article class="memory-card">
           <div class="date">Jan 1, 2023</div>
@@ -72,6 +81,10 @@
       <div class="footer-hearts"></div>
     </footer>
 
+    <!-- background audio -->
+    <audio id="background-music" src="assets/music/Bulleya.mp3" preload="auto" loop></audio>
+
     <script src="js/script.js"></script>
+  
   </body>
 </html>
