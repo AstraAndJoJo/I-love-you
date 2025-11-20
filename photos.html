@@ -3,16 +3,300 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Photos — Aarif ♥ Ananya</title>
+    <title>Surprise — Aarif ♥ Ananya</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css" />
+    <style>
+      /* Centered music button */
+      .center-music-btn {
+        position: absolute;
+        top: 60px;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 20;
+        display: flex;
+        justify-content: center;
+        width: 100%;
+      }
+
+      .music-player-btn {
+        background: linear-gradient(135deg, #ff6b9d 0%, #c44569 100%);
+        border: none;
+        border-radius: 50px;
+        padding: 1rem 2.2rem;
+        font-size: 1.2rem;
+        font-weight: 600;
+        color: white;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        box-shadow: 0 8px 25px rgba(255, 107, 157, 0.25);
+        transition: all 0.3s cubic-bezier(.4,2,.3,1);
+        position: relative;
+        overflow: hidden;
+        letter-spacing: 0.5px;
+      }
+
+      .music-player-btn:hover {
+        transform: scale(1.06) translateY(-4px);
+        box-shadow: 0 12px 35px rgba(255, 107, 157, 0.35);
+        background: linear-gradient(135deg, #ff7ba8 0%, #d4556f 100%);
+      }
+
+      .music-player-btn[aria-pressed="true"] {
+        background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+        box-shadow: 0 8px 25px rgba(79, 172, 254, 0.25);
+      }
+
+      .music-icon {
+        font-size: 2rem;
+        animation: pulse 2s infinite;
+      }
+
+      .music-player-btn[aria-pressed="true"] .music-icon {
+        animation: bounce 0.7s infinite;
+      }
+
+      @keyframes pulse {
+        0%, 100% { opacity: 1; }
+        50% { opacity: 0.7; }
+      }
+
+      @keyframes bounce {
+        0%, 100% { transform: translateY(0); }
+        50% { transform: translateY(-7px); }
+      }
+
+      .music-label {
+        font-weight: 600;
+        font-size: 1.1rem;
+      }
+
+      /* Main surprise container */
+      .surprise-container {
+        max-width: 700px;
+        margin: 3rem auto 2rem;
+        padding: 3rem 2rem;
+        background: linear-gradient(135deg, rgba(255, 107, 157, 0.08) 0%, rgba(196, 69, 105, 0.08) 100%);
+        border-radius: 25px;
+        border: 2px solid #ff6b9d;
+        box-shadow: 0 8px 30px rgba(255, 107, 157, 0.15);
+        text-align: center;
+      }
+
+      .surprise-box {
+        background: white;
+        padding: 2.5rem;
+        border-radius: 20px;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        cursor: pointer;
+        transition: all 0.3s ease;
+        margin-bottom: 1.5rem;
+      }
+
+      .surprise-box:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 35px rgba(255, 107, 157, 0.25);
+      }
+
+      .surprise-box h2 {
+        font-family: 'Caveat', cursive;
+        font-size: 2.8rem;
+        color: #c44569;
+        margin-bottom: 1rem;
+        text-shadow: 1px 1px 3px rgba(255, 107, 157, 0.2);
+      }
+
+      .surprise-text {
+        font-family: 'Poppins', sans-serif;
+        font-size: 1.15rem;
+        line-height: 1.8;
+        color: #333;
+        font-weight: 500;
+        margin-bottom: 0.5rem;
+      }
+
+      .surprise-text.ghazal {
+        font-style: italic;
+        color: #c44569;
+        font-weight: 600;
+      }
+
+      .click-hint {
+        font-family: 'Poppins', sans-serif;
+        font-size: 0.95rem;
+        color: #ff6b9d;
+        margin-top: 1rem;
+        font-weight: 600;
+        animation: pulse 2s infinite;
+      }
+
+      /* Hidden penguin modal */
+      .hidden-penguin {
+        display: none;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 200;
+        background: white;
+        padding: 2.5rem;
+        border-radius: 25px;
+        box-shadow: 0 15px 50px rgba(0, 0, 0, 0.3);
+        text-align: center;
+        animation: popIn 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+        max-width: 500px;
+      }
+
+      .hidden-penguin img {
+        width: 220px;
+        height: 220px;
+        border-radius: 20px;
+        margin-bottom: 1.5rem;
+        box-shadow: 0 8px 25px rgba(255, 107, 157, 0.3);
+      }
+
+      .hidden-penguin h3 {
+        font-family: 'Caveat', cursive;
+        font-size: 2.5rem;
+        color: #c44569;
+        margin-bottom: 1rem;
+      }
+
+      .hidden-penguin p {
+        font-family: 'Poppins', sans-serif;
+        font-size: 1.2rem;
+        color: #333;
+        line-height: 1.8;
+        font-weight: 500;
+      }
+
+      .hidden-penguin .close-btn {
+        margin-top: 1.5rem;
+        background: linear-gradient(135deg, #ff6b9d 0%, #c44569 100%);
+        color: white;
+        border: none;
+        padding: 0.8rem 2rem;
+        border-radius: 50px;
+        cursor: pointer;
+        font-weight: 600;
+        transition: all 0.3s ease;
+      }
+
+      .hidden-penguin .close-btn:hover {
+        transform: scale(1.05);
+        box-shadow: 0 4px 15px rgba(255, 107, 157, 0.3);
+      }
+
+      @keyframes popIn {
+        0% {
+          transform: translate(-50%, -50%) scale(0.3);
+          opacity: 0;
+        }
+        100% {
+          transform: translate(-50%, -50%) scale(1);
+          opacity: 1;
+        }
+      }
+
+      .overlay {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.5);
+        z-index: 150;
+      }
+
+      .overlay.show {
+        display: block;
+      }
+
+      .tagline {
+        text-align: center;
+        font-size: 1.1rem;
+        color: #666;
+        margin-top: 2rem;
+        font-family: 'Poppins', sans-serif;
+      }
+
+      /* Centered music button - Below title with proper spacing */
+      .below-title-music-btn {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 3rem 0 2rem 0;
+        width: 100%;
+        position: relative;
+        z-index: 5;
+      }
+
+      .music-player-btn.music-surprise {
+        background: linear-gradient(135deg, #ff6b9d 0%, #c44569 100%);
+        border: none;
+        border-radius: 50px;
+        padding: 1rem 2.2rem;
+        font-size: 1.1rem;
+        font-weight: 600;
+        color: white;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        gap: 0.8rem;
+        box-shadow: 0 10px 30px rgba(255, 107, 157, 0.3);
+        transition: all 0.3s cubic-bezier(.4,2,.3,1);
+        position: relative;
+        overflow: hidden;
+        letter-spacing: 0.5px;
+      }
+
+      .music-player-btn.music-surprise:hover {
+        transform: scale(1.08) translateY(-4px);
+        box-shadow: 0 15px 40px rgba(255, 107, 157, 0.4);
+        background: linear-gradient(135deg, #ff7ba8 0%, #d4556f 100%);
+      }
+
+      .music-player-btn.music-surprise:active {
+        transform: scale(0.98);
+      }
+
+      .music-player-btn.music-surprise[aria-pressed="true"] {
+        background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+        box-shadow: 0 10px 30px rgba(79, 172, 254, 0.3);
+      }
+
+      .music-player-btn.music-surprise[aria-pressed="true"]:hover {
+        box-shadow: 0 15px 40px rgba(79, 172, 254, 0.4);
+        transform: scale(1.08) translateY(-4px);
+      }
+
+      .music-player-btn.music-surprise .music-icon {
+        font-size: 1.6rem;
+        animation: pulse 2s infinite;
+      }
+
+      .music-player-btn.music-surprise[aria-pressed="true"] .music-icon {
+        animation: bounce 0.7s infinite;
+      }
+
+      .music-player-btn.music-surprise .music-label {
+        font-weight: 600;
+        font-size: 1rem;
+      }
+    </style>
   </head>
-  <body data-page="photos">
+  <body data-page="surprise">
     <div class="particles"></div>
     <header class="navbar">
       <div class="nav-inner">
         <div class="brand">
           <img src="assets/images/heart.svg" alt="heart" />
-          <span>Photos</span>
+          <span>Surprise</span>
         </div>
         <nav class="nav-links">
           <a href="index.html">Home</a>
@@ -26,39 +310,69 @@
       </div>
     </header>
 
-    <main class="section">
-      <h1 class="title">Photo Gallery</h1>
+    <main class="section surprise-hero">
+      <h1 class="title">A Lovely Surprise For You 💝</h1>
 
-      <!-- Centered Music Button -->
-      <div class="music-button-container center-music-btn">
-        <button id="music-player-btn" class="music-player-btn" aria-pressed="false">
-          <span class="music-icon">🎼</span>
-          <span class="music-label">Photo Music</span>
+      <!-- Centered Music Button - Below Title -->
+      <div class="music-button-container below-title-music-btn">
+        <button id="music-player-btn" class="music-player-btn music-surprise" aria-pressed="false">
+          <span class="music-icon">🎺</span>
+          <span class="music-label">Play Surprise Music</span>
         </button>
       </div>
 
-      <div class="masonry">
-        <div class="masonry-item"><img src="assets/images/placeholder1.svg" alt="Love 1" /></div>
-        <div class="masonry-item"><img src="assets/images/placeholder2.svg" alt="Love 2" /></div>
-        <div class="masonry-item"><img src="assets/images/placeholder3.svg" alt="Love 3" /></div>
-        <div class="masonry-item"><img src="assets/images/placeholder4.svg" alt="Love 4" /></div>
-        <div class="masonry-item"><img src="assets/images/placeholder5.svg" alt="Love 5" /></div>
-        <div class="masonry-item"><img src="assets/images/placeholder6.svg" alt="Love 6" /></div>
-        <div class="masonry-item"><img src="assets/images/placeholder7.svg" alt="Love 7" /></div>
-        <div class="masonry-item"><img src="assets/images/placeholder8.svg" alt="Love 8" /></div>
+      <!-- Surprise Container -->
+      <div class="surprise-container">
+        <div class="surprise-box" onclick="revealPenguin()">
+          <h2>✨ Click Me ✨</h2>
+          <p class="surprise-text">Tum mere dil ki dhdhkan ho,</p>
+          <p class="surprise-text ghazal">Har pal, har saans mein tumhare liye bewakoofi hai,</p>
+          <p class="surprise-text">I love you forever, Ananya...</p>
+          <div class="click-hint">👆 Click to reveal your surprise 👆</div>
+        </div>
       </div>
-    </main>
 
-    <div class="lightbox"><img alt="preview" /></div>
+      <p class="tagline">💕 Your love is my greatest treasure 💕</p>
+    </main>
 
     <footer>
       <div class="footer-line">Made with ♥ by Aarif for Ananya</div>
       <div class="footer-hearts"></div>
     </footer>
 
-     <!-- background audio -->
-    <audio id="background-music" src="assets/music/Tere_Bina.mp3" preload="auto" loop></audio>
+    <!-- Overlay -->
+    <div class="overlay" id="overlay"></div>
+
+    <!-- Hidden Penguin Modal -->
+    <div class="hidden-penguin" id="hiddenPenguin">
+      <img src="assets/images/cute_penguin.jpg" alt="Hidden Penguin" />
+      <h3>My Little Penguin 🐧</h3>
+      <p>You will be my penguin, forever and always.</p>
+      <p>The one who makes me smile, the one I cherish with all my heart.</p>
+      <button class="close-btn" onclick="closePenguin()">Close</button>
+    </div>
+
+    <!-- background audio -->
+    <audio id="background-music" src="assets/music/Tera_Chehra.mp3" preload="auto" loop></audio>
 
     <script src="js/script.js"></script>
+    <script>
+      function revealPenguin() {
+        const hiddenPenguin = document.getElementById('hiddenPenguin');
+        const overlay = document.getElementById('overlay');
+        hiddenPenguin.style.display = 'block';
+        overlay.classList.add('show');
+      }
+
+      function closePenguin() {
+        const hiddenPenguin = document.getElementById('hiddenPenguin');
+        const overlay = document.getElementById('overlay');
+        hiddenPenguin.style.display = 'none';
+        overlay.classList.remove('show');
+      }
+
+      // Close on overlay click
+      document.getElementById('overlay').addEventListener('click', closePenguin);
+    </script>
   </body>
 </html>
