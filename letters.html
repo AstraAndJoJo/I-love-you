@@ -5,6 +5,74 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Letters — Aarif ♥ Ananya</title>
     <link rel="stylesheet" href="css/style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+      /* Centered music button styles */
+      .music-button-container {
+        display: flex;
+        justify-content: center;
+        margin: 2rem 0;
+      }
+
+      .music-player-btn {
+        background: linear-gradient(135deg, #ff6b9d 0%, #c44569 100%);
+        border: none;
+        border-radius: 50px;
+        padding: 1rem 2rem;
+        font-size: 1.2rem;
+        font-weight: 600;
+        color: white;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        gap: 0.8rem;
+        box-shadow: 0 8px 25px rgba(255, 107, 157, 0.25);
+        transition: all 0.3s cubic-bezier(.4,2,.3,1);
+      }
+
+      .music-player-btn:hover {
+        transform: scale(1.05) translateY(-3px);
+        box-shadow: 0 12px 35px rgba(255, 107, 157, 0.35);
+        background: linear-gradient(135deg, #ff7ba8 0%, #d4556f 100%);
+      }
+
+      .music-icon {
+        font-size: 1.5rem;
+      }
+
+      .letter-section {
+        margin: 2rem 0;
+        padding: 1.5rem;
+        border-radius: 10px;
+        background: rgba(255, 255, 255, 0.95);
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        border: 1px solid rgba(255, 107, 157, 0.3);
+        transition: transform 0.3s ease;
+      }
+
+      .letter-section:hover {
+        transform: scale(1.02);
+      }
+
+      .letter-section h2 {
+        font-family: 'Caveat', cursive;
+        font-size: 2.5rem;
+        color: #c44569;
+        text-shadow: 1px 1px 5px rgba(255, 107, 157, 0.5);
+      }
+
+      .letter {
+        font-family: 'Poppins', sans-serif;
+        font-size: 1.1rem;
+        line-height: 1.8;
+        color: #333;
+        margin: 0.5rem 0;
+        padding: 0.5rem;
+        border-left: 4px solid #ff6b9d;
+        background: rgba(255, 255, 255, 0.8);
+        border-radius: 5px;
+      }
+    </style>
   </head>
   <body data-page="letters">
     <div class="particles"></div>
@@ -29,25 +97,35 @@
     <main class="section letters-hero">
       <h1>Letters to Ananya</h1>
 
-      <!-- Centered Music Button -->
+      <!-- Centered envelope button with envelope icon and bounce -->
       <div class="music-button-container">
-        <button id="music-player-btn" class="music-player-btn music-letters" aria-pressed="false">
-          <span class="music-icon">✉️</span>
-          <span class="music-label">Letter Lullaby</span>
+        <button id="music-player-btn" class="music-player-btn" aria-pressed="false">
+          <span class="music-icon">🎶</span>
+          <span class="music-label">Play Letters Music</span>
         </button>
       </div>
 
       <div class="letter-section">
         <h2>My First Letter to You</h2>
-        <p class="letter">Ananya, the day I met you, the world shifted into soft focus. Every moment since has carried the warmth of your smile and the calm of your voice. I promise to cherish the laughter, the quiet, and the unseen tender pauses that make us "us."</p>
+        <p class="letter">Ananya, the day I first met you is still one of the most beautiful days of my life. I remember your words, your way of speaking, and your soft, beautiful voice. Having a partner like you feels like a gift from nature itself. 💖</p>
+        <p class="letter">You look so cute, you are innocent, sometimes angry, strong from the outside, but very delicate from the inside. I want to stay with you always, forever in your light. You are truly a good person — you have made me laugh so many times, and no one has ever loved me the way you do. 🌹</p>
+        <p class="letter">You are the one I can talk to without thinking, without fear, without hiding anything. Thank you for coming into my life. 🌼</p>
       </div>
+
       <div class="letter-section">
         <h2>Things I Love About You</h2>
-        <p class="letter">I love your kindness that wraps around everyone you meet. I love the way you dream with your whole heart. I love the way you say my name—like I belong. I love that we are East and West, always finding our way back to each other.</p>
+        <p class="letter">I love how caring you are — the way you look after me just like my mom does. This is the thing I adore the most about you, and maybe that’s why I feel so emotionally attached to you. 💕</p>
+        <p class="letter">I love that when you don’t want to talk, you stay completely silent… but when you start talking, you don’t stop — and I love both sides of you. I love how much you share with me, without holding anything back. 🌈</p>
+        <p class="letter">I love your strength. Your situation is not easy, yet you still fight through everything — handling your studies, taking care of your home, managing the shop, and carrying the pressure from your mom. All of this shows how brave you really are. 💪</p>
+        <p class="letter">You are a strong, courageous girl, and I love you for that. ❤️</p>
       </div>
+
       <div class="letter-section">
         <h2>Our Future Together</h2>
-        <p class="letter">I see soft mornings with you, sunsets painted in pastel, and a lifetime of little penguin waddles. I will hold your hand through every season, every song, and every star we wish upon. Our story is a gentle forever, and I’m grateful it’s ours.</p>
+        <p class="letter">I don’t know if we have a future or not, but if we do, I want to spend all of it with you. I want to travel the whole world with you, wake up every morning seeing your face, and sleep every night after looking at you one last time. 🌍</p>
+        <p class="letter">I want to listen to every song with you, hold your hand and never let it go, never leave you alone. You can cook for me, I will cook for you, and we will cook together — laughing, fighting, helping, and learning side by side. 🍳</p>
+        <p class="letter">I want to do small things with you… like evening walks, late-night talks, sharing one blanket in winter, watching movies together, celebrating festivals together, decorating our room, planning surprises, taking care of you when you’re sick, and teasing you just to see you smile. 🌙</p>
+        <p class="letter">I want us to grow together, support each other, and build a life where both of us feel safe, loved, and understood. 💞</p>
       </div>
     </main>
 
@@ -60,6 +138,5 @@
     <audio id="background-music" src="assets/music/Mayabini.mp3" preload="auto" loop></audio>
 
     <script src="js/script.js"></script>
-  
   </body>
 </html>
