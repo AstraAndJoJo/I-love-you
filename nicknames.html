@@ -67,6 +67,62 @@
         font-size: 1.1rem;
       }
 
+      /* Music button below tagline - new position */
+      .below-tagline-music-btn {
+        position: relative;
+        top: auto;
+        left: auto;
+        transform: none;
+        z-index: 5;
+        display: flex;
+        justify-content: center;
+        margin: 2.5rem 0 1.5rem 0;
+        width: 100%;
+      }
+
+      .music-player-btn.music-bottom {
+        background: linear-gradient(135deg, #ff6b9d 0%, #c44569 100%);
+        border: none;
+        border-radius: 50px;
+        padding: 0.85rem 2rem;
+        font-size: 1rem;
+        font-weight: 600;
+        color: white;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        gap: 0.8rem;
+        box-shadow: 0 8px 25px rgba(255, 107, 157, 0.25);
+        transition: all 0.3s cubic-bezier(.4,2,.3,1);
+        position: relative;
+        overflow: hidden;
+        letter-spacing: 0.5px;
+      }
+
+      .music-player-btn.music-bottom:hover {
+        transform: scale(1.05) translateY(-3px);
+        box-shadow: 0 12px 35px rgba(255, 107, 157, 0.35);
+        background: linear-gradient(135deg, #ff7ba8 0%, #d4556f 100%);
+      }
+
+      .music-player-btn.music-bottom[aria-pressed="true"] {
+        background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+        box-shadow: 0 8px 25px rgba(79, 172, 254, 0.25);
+      }
+
+      .music-player-btn.music-bottom[aria-pressed="true"]:hover {
+        box-shadow: 0 12px 35px rgba(79, 172, 254, 0.35);
+      }
+
+      .music-player-btn.music-bottom .music-icon {
+        font-size: 1.4rem;
+        animation: pulse 2s infinite;
+      }
+
+      .music-player-btn.music-bottom[aria-pressed="true"] .music-icon {
+        animation: bounce 0.7s infinite;
+      }
+
       /* Nickname Card Styles */
       .nickname-bubbles {
         display: grid;
@@ -226,11 +282,11 @@
       <h1>Pet Names We Love</h1>
       <p class="tagline">Click each nickname to see the love behind it ♥</p>
 
-      <!-- Centered Music Button -->
-      <div class="music-button-container center-music-btn">
-        <button id="music-player-btn" class="music-player-btn" aria-pressed="false">
-          <span class="music-icon">🎷</span>
-          <span class="music-label">Nicknames Music</span>
+      <!-- Centered Music Button - Below Tagline -->
+      <div class="music-button-container below-tagline-music-btn">
+        <button id="music-player-btn" class="music-player-btn music-bottom" aria-pressed="false">
+          <span class="music-icon">🎼</span>
+          <span class="music-label">Play Nicknames Music</span>
         </button>
       </div>
 
