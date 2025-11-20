@@ -86,10 +86,30 @@
     if (!btn || !audio) return;
 
     function setState(playing) {
-      btn.textContent = playing ? '🎵 Stop Music' : '🎵 Play Music';
       btn.setAttribute('aria-pressed', playing ? 'true' : 'false');
+      // label updates per page (keeps the icon + short text)
+      const page = document.body.getAttribute('data-page') || 'home';
+      const labels = {
+        home: playing ? '🎵 Stop Music' : '🎵 Play Music',
+        photos: playing ? '♪ Stop' : '♪ Play',
+        videos: playing ? '🎬 Stop' : '🎬 Play',
+        surprise: playing ? '✨ Stop' : '✨ Play',
+        memories: playing ? '💌 Stop' : '💌 Play',
+        letters: playing ? '✉️ Stop' : '✉️ Play',
+        nicknames: playing ? '💖 Stop' : '💖 Play'
+      };
+      const label = labels[page] || (playing ? 'Stop Music' : 'Play Music');
+
+      // keep icon + label
+      const icon = btn.querySelector('.music-icon')?.textContent || '';
+      const labelNode = btn.querySelector('.music-label');
+      if (labelNode) labelNode.textContent = label;
+
+      // toggle page-specific class for animations
+      if (playing) btn.classList.add('playing'); else btn.classList.remove('playing');
     }
 
+    // initialize
     setState(!audio.paused);
 
     btn.addEventListener('click', () => {
@@ -101,6 +121,14 @@
           setState(true);
         }
       } else {
+        audio.pause();
+        setState(false);
+      }
+    });
+
+    // pause audio when page hidden
+    document.addEventListener('visibilitychange', () => {
+      if (document.hidden) {
         audio.pause();
         setState(false);
       }
