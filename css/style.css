@@ -351,6 +351,99 @@ body[data-page="nicknames"] .music-player-btn.music-nicknames:hover { transform:
   filter: saturate(1.05) brightness(1.02);
 }
 
+/* Photos: top right, camera icon, glow */
+.photos-music-btn {
+  position: absolute;
+  top: 24px;
+  right: 32px;
+  z-index: 10;
+}
+.photos-music-btn .music-player-btn {
+  background: linear-gradient(135deg,#ffb3b3,#ffd6e0);
+  box-shadow: 0 0 18px #ffb3b3;
+}
+.photos-music-btn .music-icon { font-size: 1.6rem; }
+
+/* Videos: bottom left, play icon, pulse */
+.videos-music-btn {
+  position: absolute;
+  bottom: 32px;
+  left: 32px;
+  z-index: 10;
+}
+.videos-music-btn .music-player-btn {
+  background: radial-gradient(circle,#ffd86f,#ff6b6b);
+  border-radius: 50%;
+  width: 60px; height: 60px;
+  justify-content: center;
+  box-shadow: 0 0 18px #ff6b6b;
+  font-size: 1.2rem;
+  animation: pulse 2s infinite;
+}
+.videos-music-btn .music-icon { font-size: 2rem; }
+
+/* Memories: top center, heart icon, slide */
+.memories-music-btn {
+  position: absolute;
+  top: 24px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+}
+.memories-music-btn .music-player-btn {
+  background: linear-gradient(90deg,#f8c9f2,#f6a1d9);
+  box-shadow: 0 0 18px #f8c9f2;
+  transition: transform 0.3s;
+}
+.memories-music-btn .music-player-btn:hover { transform: translateY(-6px) scale(1.05); }
+.memories-music-btn .music-icon { font-size: 1.7rem; }
+
+/* Letters: centered, envelope icon, bounce */
+.letters-music-btn {
+  display: flex;
+  justify-content: center;
+  margin: 2rem 0;
+}
+.letters-music-btn .music-player-btn {
+  background: linear-gradient(135deg,#ffe7b5,#ffd1a6);
+  box-shadow: 0 0 18px #ffd1a6;
+  animation: bounce 1.2s infinite;
+}
+.letters-music-btn .music-icon { font-size: 1.5rem; }
+@keyframes bounce {
+  0%,100%{transform:translateY(0);}
+  50%{transform:translateY(-8px);}
+}
+
+/* Nicknames: bottom right, sparkle icon, rotate */
+.nicknames-music-btn {
+  position: absolute;
+  bottom: 32px;
+  right: 32px;
+  z-index: 10;
+}
+.nicknames-music-btn .music-player-btn {
+  background: linear-gradient(135deg,#ffb3da,#ff9ccf);
+  box-shadow: 0 0 18px #ffb3da;
+  transition: transform 0.3s;
+}
+.nicknames-music-btn .music-player-btn:hover { transform: rotate(-8deg) scale(1.08); }
+.nicknames-music-btn .music-icon { font-size: 1.7rem; }
+
+/* Surprise: top left, star icon, glow */
+.surprise-music-btn {
+  position: absolute;
+  top: 24px;
+  left: 32px;
+  z-index: 10;
+}
+.surprise-music-btn .music-player-btn {
+  background: linear-gradient(135deg,#9be7ff,#7ecbff);
+  box-shadow: 0 0 18px #7ecbff;
+  color: #042a3a;
+}
+.surprise-music-btn .music-icon { font-size: 1.7rem; }
+
 /* Animations */
 @keyframes float {
   0% { transform: translateY(0) }
