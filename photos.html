@@ -28,6 +28,15 @@
 
     <main class="section">
       <h1 class="title">Photo Gallery</h1>
+
+      <!-- Centered Music Button -->
+      <div class="music-button-container">
+        <button id="music-player-btn" class="music-player-btn music-photos" aria-pressed="false">
+          <span class="music-icon">♪</span>
+          <span class="music-label">Play Photos Music</span>
+        </button>
+      </div>
+
       <div class="masonry">
         <div class="masonry-item"><img src="assets/images/placeholder1.svg" alt="Love 1" /></div>
         <div class="masonry-item"><img src="assets/images/placeholder2.svg" alt="Love 2" /></div>
@@ -46,6 +55,9 @@
       <div class="footer-line">Made with ♥ by Aarif for Ananya</div>
       <div class="footer-hearts"></div>
     </footer>
+
+     <!-- background audio -->
+    <audio id="background-music" src="assets/music/Tere_Bina.mp3" preload="auto" loop></audio>
 
     <script src="js/script.js"></script>
   </body>
